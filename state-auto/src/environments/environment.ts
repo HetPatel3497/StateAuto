@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  crimeApiUrl: 'https://api.usa.gov/crime/fbi/sapi/',
+  crimeApiKey: 'mrT6Q3BPDjtnrGtURVKaBQ9mdwNB2PGIm8RJgHY5',
 };
 
 /*
