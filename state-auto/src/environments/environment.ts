@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  weatherApiUrl: 'https://api.weatherapi.com/v1',
-  weatherApiKey: '4c82f11563d54872894203335201411',
+  weatherApiUrl: '',
+  weatherApiKey: '',
 };
 
 /*

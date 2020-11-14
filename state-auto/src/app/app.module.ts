@@ -12,12 +12,14 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     MainPageComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

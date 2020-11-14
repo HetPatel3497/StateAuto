@@ -20,7 +20,9 @@ export class MainPageComponent implements OnInit {
   }
 
   getWeather(){
-    this.weatherService.getWeatherByCity('columbus').subscribe(
+    const cityName =( document.getElementById('city') as HTMLInputElement).value;
+
+    this.weatherService.getWeatherByCity(cityName).subscribe(
       (response) => {
         console.log(response);
         this.currentWeather = response;
