@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  crimeApiUrl: 'https://api.usa.gov/crime/fbi/sapi/',
-  crimeApiKey: 'mrT6Q3BPDjtnrGtURVKaBQ9mdwNB2PGIm8RJgHY5',
+  weatherApiUrl: 'https://api.weatherapi.com/v1',
+  weatherApiKey: '4c82f11563d54872894203335201411',
 };
 
 /*

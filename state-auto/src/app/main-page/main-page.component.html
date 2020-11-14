@@ -2,6 +2,13 @@
  
 <p>Enter your Address to get started:</p>
 
-<input type="text" placeholder="Enter Address">
+<input type="text" [(ngModel)]="city" placeholder="Enter city">
 
-<input type="button" value="Submit" onclick="getWeather($event)">
+<input type="button" value="Submit" (click)="getWeather()">
+
+
+<div *ngIf='currentWeather'>
+
+    <p>Country: {{currentWeather.location.country}}</p>
+    <p>Weather: {{currentWeather.current.feelslike_f}}</p>
+</div>

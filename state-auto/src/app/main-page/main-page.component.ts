@@ -13,11 +13,20 @@ export class MainPageComponent implements OnInit {
 
   constructor(private weatherService: WeatherService) { }
 
+  city: string;
+  currentWeather: any;
+
   ngOnInit(): void {
   }
 
-  getWeather(event: any){
-    const zipCode = event.value;
-    this.weather = this.weatherService.getWeatherByZipCode();
+  getWeather(){
+    this.weatherService.getWeatherByCity('columbus').subscribe(
+      (response) => {
+        console.log(response);
+        this.currentWeather = response;
+      },
+      
+      (error) => console.log(error), 
+    );;
   }
 }
