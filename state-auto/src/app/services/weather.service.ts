@@ -43,7 +43,6 @@ export class WeatherService {
         .set("city", city)
         .set("state", state)
         .set("key", environment.mapquestApiKey);
-        //return this.http.get(environment.mapquestApiUrl + `/?key=${environment.mapquestApiKey}&location=${city},${state}`);
         return this.http.get(environment.mapquestApiUrl + `?key=${environment.mapquestApiKey}&location=${city},${state}`);
     }
 }

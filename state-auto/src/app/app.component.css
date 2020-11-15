@@ -13,6 +13,7 @@
     text-decoration: none;
     font-size: 20px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+   
   }
   
   .topnav a:hover {
@@ -35,11 +36,16 @@
   
   .topnav-right {
     float: right;
-    margin-right: 6%;
+    
   }
-  .topnav-left {
-      margin-left: 6%;
-    }
+  /*
+    .topnav-right :last-child {
+    margin-left: 3%;
+  }
+  
+  .topnav-left :first-child {
+      margin-right: 3%;
+    }  */
   
   @media screen and (max-width: 600px) {
     .topnav a, .topnav-right {
