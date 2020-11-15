@@ -34,6 +34,7 @@ export class CrimeComponent implements OnInit {
         (response) => {
           results.push(response);
           results[i] = this.proceessOffenseResponse(response);
+          console.log(results[i], 'het');
         },
         
         (error) => console.log(error), 
@@ -44,28 +45,28 @@ export class CrimeComponent implements OnInit {
     var finalObj = [{name: 'Aggravated Assult', points: results[0]}, {name: 'Motor Vehicle Theft', points: results[1]}, {name: 'Rape', points: results[2]}, {name: 'Robbery', points: results[3]}, {name: 'Arson', points: results[4]}];
     console.log(finalObj);
     
-    this.renderChart(finalObj);
+    this.renderChart(results[0]);
     this.getPoliceDep();
 
   }
 
   renderChart (series){
-    let chart = new CanvasJS.Chart("chartContainer", {
-      zoomEnabled: true,
+    console.log(series, 'het');
+    var chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
-      exportEnabled: true,
-      title: {
-        text: "Performance Demo - 10000 DataPoints"
+      theme: "light2",
+      title:{
+        text: "Simple Line Chart"
       },
-      subtitles:[{
-        text: "Try Zooming and Panning"
-      }],
-      data: [
-      {
-        type: "line",                
-        dataPoints: series
+      data: [{        
+        type: "line",
+            indexLabelFontSize: 16,
+        dataPoints: [
+          series
+        ]
       }]
     });
+    chart.render();
       
     chart.render();
   }
@@ -75,6 +76,7 @@ export class CrimeComponent implements OnInit {
     for(var i = 0; i < response.results.length; i++){
       table[i] = {x: response.results[i].data_year, y: response.results[i].count}
     }
+    return table;
   }
 
   getPoliceDep(){
