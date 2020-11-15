@@ -1,42 +1,19 @@
 
 
 
-<div id="content">
-    <div id = "backgroundDiv"></div>
-    <div class="topnav">
+<div id = "bodyDiv">
+    <span>Welcome to {{ title }}</span>
 
-        <div class="topnav-centered">
-          <a href="" class="active"><img src="../../../Images/placeholder.com-logo3.jpg" alt="image of our logo"></a>
-        </div>
-    
-        <div class="topnav-left">
-            <a href="crime">Crime</a>
-            <a href="weather">Weather</a>
-          </div>
-        
-    
-        <div class="topnav-right">
-          <a href="compare">Compare</a>
-          <a href="about">About</a>
-        </div>
-      
-      </div>
-      <div id = "bodyDiv">
-        <span>Welcome to {{ title }}</span>
-     
-        <p>Enter your Address to get started:</p>
-        
-        <input id="city" type="text" [(ngModel)]="city" placeholder="Enter city">
-        
-        <input type="button" value="Submit" (click)="getWeather()">
-        
-        
-        <div *ngIf='currentWeather'>
-        
-            <p>Country: {{currentWeather.location.country}}</p>
-            <p>Weather: {{currentWeather.current.feelslike_f}}</p>
-        </div>
-      </div>
+    <p>Enter your Address to get started:</p>
+
+    <input id="city" type="text" [(ngModel)]="city" placeholder="Enter city">
+
+    <input type="button" value="Submit" (click)="getWeather()">
+
+    <div *ngIf='currentWeather'>
+
+        <p>Country: {{currentWeather.location.country}}</p>
+        <p>Weather: {{currentWeather.current.feelslike_f}}</p>
+    </div>
 </div>
-
 
