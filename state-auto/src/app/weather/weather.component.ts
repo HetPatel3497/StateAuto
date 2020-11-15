@@ -9,8 +9,8 @@ import { WeatherService } from '../services/weather.service'
 export class WeatherComponent implements OnInit {
 
   title = 'Air';
-  lat = '';
-  long = '';
+  latitude = '';
+  longitude = '';
 
   constructor(private weatherService: WeatherService) {   }
 
@@ -19,10 +19,10 @@ export class WeatherComponent implements OnInit {
 
 
   getAirQuality(){
-    const lat = (document.getElementById('lat') as HTMLInputElement).value;
-    const long = (document.getElementById('long') as HTMLInputElement).value;
+    const latitude = (document.getElementById('lat') as HTMLInputElement).value;
+    const longitude = (document.getElementById('long') as HTMLInputElement).value;
     const arr = [];
-    this.weatherService.getAirQuality(lat, long).subscribe(
+    this.weatherService.getAirQuality(latitude, longitude).subscribe(
       (response) => {
         arr.push(response);
         console.log("het");

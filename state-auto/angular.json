@@ -26,7 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["https://code.jscharting.com/2.9.0/jscharting.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {

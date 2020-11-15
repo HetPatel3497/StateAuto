@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { CrimeComponent } from './crime/crime.component';
 import { AboutComponent } from './about/about.component';
 import { CompareComponent } from './compare/compare.component';
+import { WeatherComponent } from './weather/weather.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { CompareComponent } from './compare/compare.component';
     CrimeComponent,
     CompareComponent,
     AboutComponent,
+    WeatherComponent,
     
   ],
   imports: [
