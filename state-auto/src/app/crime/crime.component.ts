@@ -1,5 +1,7 @@
+import { JSDocCommentStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../services/weather.service'
+import { ApiService } from '../services/api.service'
+import * as CanvasJS from '../canvasjs.min';
 
 @Component({
   selector: 'app-crime',
@@ -14,7 +16,7 @@ export class CrimeComponent implements OnInit {
   state = '';
   city = "";
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
   }
@@ -27,14 +29,8 @@ export class CrimeComponent implements OnInit {
     const offenseTypeNames = ['aggravated-assault', 'motor-vehicle-theft', 'rape', 'robbery', 'arson'];
     var results = [];
 
-    var aggravatedAssault = [];
-    var motorVehicleTheft = [];
-    var rape = [];
-    var robbery = [];
-    var arson = [];
-
     for(var i = 0; i < offenseTypeNames.length; i++){
-      this.weatherService.getCrimeByState(state, offenseTypeNames[i], count).subscribe(
+      this.apiService.getCrimeByState(state, offenseTypeNames[i], count).subscribe(
         (response) => {
           results.push(response);
           results[i] = this.proceessOffenseResponse(response);
@@ -48,6 +44,30 @@ export class CrimeComponent implements OnInit {
     var finalObj = [{name: 'Aggravated Assult', points: results[0]}, {name: 'Motor Vehicle Theft', points: results[1]}, {name: 'Rape', points: results[2]}, {name: 'Robbery', points: results[3]}, {name: 'Arson', points: results[4]}];
     console.log(finalObj);
     
+    this.renderChart(finalObj);
+    this.getPoliceDep();
+
+  }
+
+  renderChart (series){
+    let chart = new CanvasJS.Chart("chartContainer", {
+      zoomEnabled: true,
+      animationEnabled: true,
+      exportEnabled: true,
+      title: {
+        text: "Performance Demo - 10000 DataPoints"
+      },
+      subtitles:[{
+        text: "Try Zooming and Panning"
+      }],
+      data: [
+      {
+        type: "line",                
+        dataPoints: series
+      }]
+    });
+      
+    chart.render();
   }
 
   proceessOffenseResponse(response){
@@ -57,6 +77,23 @@ export class CrimeComponent implements OnInit {
     }
   }
 
+  getPoliceDep(){
+    this.apiService.getPoliceStations().subscribe(
+      (response) => {
+        console.log("response", response);
+        var arr = [];
+        for(var rsp in response){
+          // console.log(response[rsp])
+           for(var item in response[rsp]){
+               console.log(response[rsp][item].agency_name)
+           }
+       
+       }
+      },
+      
+      (error) => console.log(error), 
+    )
+  }
   
 
 }

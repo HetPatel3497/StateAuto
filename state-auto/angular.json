@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "state-auto": {
+    "property-hunt": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/state-auto",
+            "outputPath": "dist/Property-Hunt",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "state-auto:build"
+            "browserTarget": "Property-Hunt:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "state-auto:build:production"
+              "browserTarget": "Property-Hunt:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "state-auto:build"
+            "browserTarget": "Property-Hunt:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "state-auto:serve"
+            "devServerTarget": "Property-Hunt:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "state-auto:serve:production"
+              "devServerTarget": "Property-Hunt:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "state-auto"
+  "defaultProject": "Property-Hunt"
 }

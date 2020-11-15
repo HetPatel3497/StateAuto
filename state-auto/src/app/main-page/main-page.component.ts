@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../services/weather.service'
+import { ApiService } from '../services/api.service'
 
 @Component({
   selector: 'app-main-page',
@@ -11,7 +11,7 @@ export class MainPageComponent implements OnInit {
   title = 'Address Risk Searcher';
   weather: string;
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private apiService: ApiService) { }
 
   city: string;
   currentWeather: any;
@@ -22,7 +22,7 @@ export class MainPageComponent implements OnInit {
   getWeather(){
     const cityName = (document.getElementById('city') as HTMLInputElement).value;
 
-    this.weatherService.getWeatherByCity(cityName).subscribe(
+    this.apiService.getWeatherByCity(cityName).subscribe(
       (response) => {
         console.log(response);
         this.currentWeather = response;

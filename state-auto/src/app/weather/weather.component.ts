@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../services/weather.service'
+import { ApiService } from '../services/api.service'
 
 @Component({
   selector: 'app-weather',
@@ -12,7 +12,7 @@ export class WeatherComponent implements OnInit {
   latitude = '';
   longitude = '';
 
-  constructor(private weatherService: WeatherService) {   }
+  constructor(private apiService: ApiService) {   }
 
   ngOnInit(): void {
   }
@@ -22,7 +22,7 @@ export class WeatherComponent implements OnInit {
   //   const latitude = (document.getElementById('latitude') as HTMLInputElement).value;
   //   const longitude = (document.getElementById('longitude') as HTMLInputElement).value;
   //   const arr = [];
-  //   this.weatherService.getAirQuality(latitude, longitude).subscribe(
+  //   this.apiService.getAirQuality(latitude, longitude).subscribe(
   //     (response) => {
   //       arr.push(response);
   //       console.log(response);
@@ -44,7 +44,7 @@ export class WeatherComponent implements OnInit {
     var countryResult;
 
 
-    this.weatherService.getLatLongByCityState(city ,state).subscribe(
+    this.apiService.getLatLongByCityState(city ,state).subscribe(
       (response) => {
         x.push(response);
         console.log(response);
@@ -53,7 +53,7 @@ export class WeatherComponent implements OnInit {
         countryResult = x[0].results[0].locations[0].adminArea1;
         latitude = x[0].results[0].locations[0].latLng.lat;
         longitude = x[0].results[0].locations[0].latLng.lng;
-        this.weatherService.getAirQuality(latitude, longitude).subscribe(
+        this.apiService.getAirQuality(latitude, longitude).subscribe(
           (response) => {
             console.log(response);
         },(error) => console.log(error),);;
