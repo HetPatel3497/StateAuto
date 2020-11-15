@@ -1,1 +1,7 @@
 <p>weather works!</p>
+
+<input id="lat" type="text" [(ngModel)]="lat" placeholder="Enter lat">
+<input id="long" type="text" [(ngModel)]="long" placeholder="Enter long">
+<input type="button" value="Submit" (click)="getAirQuality()">
+
+
