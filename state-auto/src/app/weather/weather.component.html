@@ -4,4 +4,6 @@
 <input id="longitude" type="text" [(ngModel)]="longitude" placeholder="Enter long">
 <input type="button" value="Submit" (click)="getAirQuality()">
 
-
+<input id="city" type="text" [(ngModel)]="city" placeholder="Enter city">
+<input id="state" type="text" [(ngModel)]="state" placeholder="Enter state">
+<input type="button" value="Submit" (click)="getLatLongByCityState()">

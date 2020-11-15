@@ -10,6 +10,9 @@ export const environment = {
   crimeApiKey: 'iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv',
   airApiUrl:'https://api.breezometer.com/air-quality/v2/',
   airApiKey:'0af9f2cafaee4965836189e304336b46',
+  mapquestApiUrl: 'http://www.mapquestapi.com/geocoding/v1/address',
+  mapquestApiKey: 'qlmAtZ0CsycqktdC6zRr6UFwGAaEMpha',
+  
 };
 
 /*

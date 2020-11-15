@@ -35,8 +35,15 @@ export class WeatherService {
         .set("lat", latitude)
         .set("long", longitude)
         .set("key", environment.weatherApiKey);
-        console.log(`/current-conditions?lat=${latitude}&lon=${longitude}&key=${environment.airApiKey}`);
+        console.log(`/current-conditions?lat=${latitude}&lon=${longitude}&key=${environment.airApiKey}`);   
         return this.http.get(environment.airApiUrl + `/current-conditions?lat=${latitude}&lon=${longitude}&key=${environment.airApiKey}`); 
     }
-    
+    getLatLongByCityState(city: string, state: string){
+        const params = new HttpParams()
+        .set("city", city)
+        .set("state", state)
+        .set("key", environment.mapquestApiKey);
+        //return this.http.get(environment.mapquestApiUrl + `/?key=${environment.mapquestApiKey}&location=${city},${state}`);
+        return this.http.get(environment.mapquestApiUrl + `?key=${environment.mapquestApiKey}&location=${city},${state}`);
+    }
 }
