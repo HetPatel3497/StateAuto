@@ -1,1 +1,8 @@
 <p>crime works!</p>
+
+<input id="city" type="text" [(ngModel)]="city" placeholder="Enter City">
+<input id="state" type="text" [(ngModel)]="state" placeholder="Enter State">
+<input id="zip" type="text" [(ngModel)]="zip" placeholder="Enter ZIP">
+        
+<input type="button" value="Submit" (click)="getCrime()">
+       

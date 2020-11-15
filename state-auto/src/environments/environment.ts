@@ -6,6 +6,8 @@ export const environment = {
   production: false,
   weatherApiUrl: '',
   weatherApiKey: '',
+  crimeApiUrl: 'https://api.usa.gov/crime/fbi/sapi/api/data/nibrs/',
+  crimeApiKey: 'iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv',
 };
 
 /*
