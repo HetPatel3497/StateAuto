@@ -28,10 +28,7 @@ export class WeatherService {
         .set("key", environment.crimeApiKey);
 
         return this.http.get(environment.crimeApiUrl + `/${offense}/offender/states/${state}/${count}?API_KEY=${environment.crimeApiKey}`);
-<<<<<<< Updated upstream
           
-=======
->>>>>>> Stashed changes
     }
     getAirQuality(lat: string, long: string){
         const params = new HttpParams()
