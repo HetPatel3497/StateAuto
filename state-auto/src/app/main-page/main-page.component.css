@@ -55,20 +55,15 @@
   }
 }
 
-  #backgroundDiv {
-    content: "";
-    background-image: url(../../../Images/FinalBodyImg.png);
-    background-size: cover;
-    position: absolute;
-    top: 7.25%;
-    right: .6%;
-    bottom: 1%;
-    left: .6%;
-    opacity: 0.8;
-  }
+  
   #bodyDiv{
     position: relative;
     position: center;
-    
     overflow:auto; 
+    border: 2px solid;
+    height:89vh;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../../Images/FinalBodyImg.png);
   }
