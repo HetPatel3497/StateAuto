@@ -36,7 +36,7 @@ export class WeatherService {
         .set("long", longitude)
         .set("key", environment.weatherApiKey);
         console.log(`/current-conditions?lat=${latitude}&lon=${longitude}&key=${environment.airApiKey}`);   
-        return this.http.get(environment.airApiUrl + `/current-conditions?lat=${latitude}&lon=${longitude}&key=${environment.airApiKey}`); 
+        return this.http.get(environment.airApiUrl + `current-conditions?lat=${latitude}&lon=${longitude}&key=${environment.airApiKey}`); 
     }
     getLatLongByCityState(city: string, state: string){
         const params = new HttpParams()

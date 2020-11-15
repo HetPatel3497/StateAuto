@@ -18,19 +18,19 @@ export class WeatherComponent implements OnInit {
   }
 
 
-  getAirQuality(){
-    const latitude = (document.getElementById('latitude') as HTMLInputElement).value;
-    const longitude = (document.getElementById('longitude') as HTMLInputElement).value;
-    const arr = [];
-    this.weatherService.getAirQuality(latitude, longitude).subscribe(
-      (response) => {
-        arr.push(response);
-        console.log(response);
-      },
-      (error) => console.log(error), 
-    );;
-    console.log(arr)
-  }
+  // getAirQuality(){
+  //   const latitude = (document.getElementById('latitude') as HTMLInputElement).value;
+  //   const longitude = (document.getElementById('longitude') as HTMLInputElement).value;
+  //   const arr = [];
+  //   this.weatherService.getAirQuality(latitude, longitude).subscribe(
+  //     (response) => {
+  //       arr.push(response);
+  //       console.log(response);
+  //     },
+  //     (error) => console.log(error), 
+  //   );;
+  //   console.log(arr)
+  // }
   getLatLongByCityState(){
     const city = (document.getElementById('city') as HTMLInputElement).value;
     const state = (document.getElementById('state') as HTMLInputElement).value;
@@ -55,7 +55,7 @@ export class WeatherComponent implements OnInit {
         longitude = x[0].results[0].locations[0].latLng.lng;
         this.weatherService.getAirQuality(latitude, longitude).subscribe(
           (response) => {
-
+            console.log(response);
         },(error) => console.log(error),);;
         
       },
